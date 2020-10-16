@@ -1,0 +1,12 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "../dist/electron",
+		"module": "commonjs",
+		"target": "es2018",
+		"types": [
+			"node"
+		]
+	}
+}
