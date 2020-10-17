@@ -5,14 +5,17 @@ import { app, BrowserWindow } from 'electron';
 
 const config = require('./assets/config/appsettings.json');
 
-console.log(config);
-
 let win: BrowserWindow;
 
 function createWindow() {
+	console.debug('Electron creating a window of dimensions', config.window.dimensions);
+
 	win = new BrowserWindow({
 		width: config.window.dimensions.width,
-		height: config.window.dimensions.height
+		height: config.window.dimensions.height,
+		webPreferences: {
+			nodeIntegration: true,
+		},
 	});
 
 	win.loadURL(
